@@ -1,19 +1,17 @@
 // Question 5: Advanced Features & Mixins (Difficulty: 5/5) ⭐⭐⭐⭐⭐
-/**
- * EXPECTED OUTPUT:
- * Manager: John Smith (ID: M001, Department: IT, Team Size: 5)
- * Job Title: Manager
- * Base Salary: 8000.0
- * Calculated Salary: 9000.0
- * Payment processed: 9000.0
- * Report: Monthly report for John Smith in IT department
- * 
- * Developer: Alice Johnson (ID: D001, Department: IT, Language: Dart)
- * Job Title: Senior Developer
- * Base Salary: 6000.0
- * Calculated Salary: 6500.0
- * Payment processed: 6500.0
- */
+/// EXPECTED OUTPUT:
+/// Manager: John Smith (ID: M001, Department: IT, Team Size: 5)
+/// Job Title: Manager
+/// Base Salary: 8000.0
+/// Calculated Salary: 9000.0
+/// Payment processed: 9000.0
+/// Report: Monthly report for John Smith in IT department
+/// 
+/// Developer: Alice Johnson (ID: D001, Department: IT, Language: Dart)
+/// Job Title: Senior Developer
+/// Base Salary: 6000.0
+/// Calculated Salary: 6500.0
+/// Payment processed: 6500.0
 
 // 1. Mixin Payable:
 //    - Method: double calculateSalary(double baseSalary, double bonus)
@@ -21,7 +19,7 @@
 mixin Payable {
   double calculateSalary(double baseSalary, double bonus) {
     // TODO: Calculate total salary (base + bonus)
-    return 0.0;
+    return 0;
   }
 
   void processPayment(double amount) {
@@ -34,7 +32,7 @@ mixin Payable {
 mixin Reportable {
   String generateReport(String employeeName, String department) {
     // TODO: Generate and return report string: "Report: Monthly report for <name> in <department> department"
-    return "";
+    return '';
   }
 }
 
@@ -43,11 +41,11 @@ mixin Reportable {
 //    - Abstract method: String getJobTitle()
 //    - Abstract method: double getBaseSalary()
 abstract class Employee {
+
+  Employee(this.name, this.id, this.department);
   String name;
   String id;
   String department;
-
-  Employee(this.name, this.id, this.department);
 
   String getJobTitle();
   double getBaseSalary();
@@ -64,19 +62,18 @@ abstract class Employee {
 class Manager extends Employee with Payable, Reportable {
   int teamSize;
 
-  Manager(String name, String id, String department, this.teamSize)
-      : super(name, id, department);
+  Manager(super.name, super.id, super.department, this.teamSize);
 
   @override
   String getJobTitle() {
     // TODO: Return manager job title
-    return "";
+    return '';
   }
 
   @override
   double getBaseSalary() {
     // TODO: Return manager base salary
-    return 0.0;
+    return 0;
   }
 
   @override
@@ -91,19 +88,18 @@ class Manager extends Employee with Payable, Reportable {
 class Developer extends Employee with Payable {
   String programmingLanguage;
 
-  Developer(String name, String id, String department, this.programmingLanguage)
-      : super(name, id, department);
+  Developer(super.name, super.id, super.department, this.programmingLanguage);
 
   @override
   String getJobTitle() {
     // TODO: Return developer job title
-    return "";
+    return '';
   }
 
   @override
   double getBaseSalary() {
     // TODO: Return developer base salary
-    return 0.0;
+    return 0;
   }
 
   @override

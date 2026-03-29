@@ -1,17 +1,15 @@
 // Question 4: Inheritance & Polymorphism (Difficulty: 4/5) ⭐⭐⭐⭐
-/**
- * EXPECTED OUTPUT:
- * Vehicle Info: 2020 Toyota Camry (4 doors)
- * Starting the car engine...
- * Stopping the car engine...
- * 
- * Vehicle Info: 2021 Honda CBR (Has windshield: true)
- * Starting the motorcycle engine...
- * Stopping the motorcycle engine...
- * 
- * Car age: <Value> years
- * Motorcycle age: <Value> years
- */
+/// EXPECTED OUTPUT:
+/// Vehicle Info: 2020 Toyota Camry (4 doors)
+/// Starting the car engine...
+/// Stopping the car engine...
+/// 
+/// Vehicle Info: 2021 Honda CBR (Has windshield: true)
+/// Starting the motorcycle engine...
+/// Stopping the motorcycle engine...
+/// 
+/// Car age: <Value> years
+/// Motorcycle age: <Value> years
 
 // 1. Abstract Class Vehicle:
 //    - Properties: String brand, String model, int year
@@ -19,11 +17,11 @@
 //    - Abstract method: void stop()
 //    - Concrete method: void displayInfo()
 abstract class Vehicle {
+
+  Vehicle(this.brand, this.model, this.year);
   String brand;
   String model;
   int year;
-
-  Vehicle(this.brand, this.model, this.year);
 
   // Abstract methods
   void start();
@@ -46,10 +44,10 @@ abstract class Vehicle {
 //      - Additional property: int numberOfDoors
 //      - Override start() and stop() methods
 class Car extends Vehicle {
-  int numberOfDoors;
 
   Car(String brand, String model, int year, this.numberOfDoors)
       : super(brand, model, year);
+  int numberOfDoors;
 
   @override
   void start() {
@@ -71,10 +69,10 @@ class Car extends Vehicle {
 //      - Additional property: bool hasWindshield
 //      - Override start() and stop() methods
 class Motorcycle extends Vehicle {
-  bool hasWindshield;
 
   Motorcycle(String brand, String model, int year, this.hasWindshield)
       : super(brand, model, year);
+  bool hasWindshield;
 
   @override
   void start() {
