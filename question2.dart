@@ -11,13 +11,13 @@ import 'dart:math';
 
 void main() {
   // 1. Create a List<String> of student names: ["Alice", "Bob", "Charlie", "Diana", "Eve"]
-  final studentNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
+  var studentNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
 
   // 2. Create a Map<String, int> to store student scores
-  const studentScores = <String, int>{};
+  var studentScores = <String, int>{};
 
   // 3. Use a for loop to assign random scores (60-100) to each student
-  final random = Random();
+  var random = Random();
   for (var name in studentNames) {
     studentScores[name] = 60 + random.nextInt(41); // 60..100
   }
