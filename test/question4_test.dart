@@ -28,7 +28,7 @@ void main() {
     });
     
     test('polymorphism works correctly', () {
-      var vehicles = <Vehicle>[
+      final vehicles = <Vehicle>[
         Car('Toyota', 'Camry', 2020, 4),
         Motorcycle('Honda', 'CBR', 2021, true),
       ];

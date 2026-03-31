@@ -12,6 +12,8 @@
 /// Base Salary: 6000.0
 /// Calculated Salary: 6500.0
 /// Payment processed: 6500.0
+library;
+
 
 // 1. Mixin Payable:
 //    - Method: double calculateSalary(double baseSalary, double bonus)
@@ -60,9 +62,9 @@ abstract class Employee {
 //      - Additional property: int teamSize
 //      - Override required methods
 class Manager extends Employee with Payable, Reportable {
-  int teamSize;
 
   Manager(super.name, super.id, super.department, this.teamSize);
+  int teamSize;
 
   @override
   String getJobTitle() {
@@ -86,9 +88,9 @@ class Manager extends Employee with Payable, Reportable {
 //      - Additional property: String programmingLanguage
 //      - Override required methods
 class Developer extends Employee with Payable {
-  String programmingLanguage;
 
   Developer(super.name, super.id, super.department, this.programmingLanguage);
+  String programmingLanguage;
 
   @override
   String getJobTitle() {

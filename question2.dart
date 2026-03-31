@@ -11,14 +11,14 @@ import 'dart:math';
 
 void main() {
   // 1. Create a List<String> of student names: ["Alice", "Bob", "Charlie", "Diana", "Eve"]
-  var studentNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
+  final studentNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
 
   // 2. Create a Map<String, int> to store student scores
-  var studentScores = <String, int>{};
+  final studentScores = <String, int>{};
 
   // 3. Use a for loop to assign random scores (60-100) to each student
-  var random = Random();
-  for (var name in studentNames) {
+  final random = Random();
+  for (final name in studentNames) {
     studentScores[name] = 60 + random.nextInt(41); // 60..100
   }
 
@@ -32,7 +32,7 @@ void main() {
   var lowestScore = 101;
   var totalScore = 0;
 
-  for (var entry in studentScores.entries) {
+  for (final entry in studentScores.entries) {
     final name = entry.key;
     final score = entry.value;
 
@@ -49,7 +49,7 @@ void main() {
     }
   }
 
-  var averageScore =
+  final averageScore =
       (studentScores.isEmpty ? 0 : totalScore ~/ studentScores.length);
 
   print('Student Scores: $studentScores');
@@ -62,8 +62,8 @@ void main() {
   //    - 80-89: "Good"
   //    - 70-79: "Average"
   //    - Below 70: "Needs Improvement"
-  for (var student in studentNames) {
-    var score = studentScores[student] ?? 0;
+  for (final student in studentNames) {
+    final score = studentScores[student] ?? 0;
     var category = '';
 
     switch (score ~/ 10) {

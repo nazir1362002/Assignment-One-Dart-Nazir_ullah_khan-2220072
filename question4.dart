@@ -10,6 +10,8 @@
 /// 
 /// Car age: <Value> years
 /// Motorcycle age: <Value> years
+library;
+
 
 // 1. Abstract Class Vehicle:
 //    - Properties: String brand, String model, int year
@@ -45,8 +47,7 @@ abstract class Vehicle {
 //      - Override start() and stop() methods
 class Car extends Vehicle {
 
-  Car(String brand, String model, int year, this.numberOfDoors)
-      : super(brand, model, year);
+  Car(super.brand, super.model, super.year, this.numberOfDoors);
   int numberOfDoors;
 
   @override
@@ -70,8 +71,7 @@ class Car extends Vehicle {
 //      - Override start() and stop() methods
 class Motorcycle extends Vehicle {
 
-  Motorcycle(String brand, String model, int year, this.hasWindshield)
-      : super(brand, model, year);
+  Motorcycle(super.brand, super.model, super.year, this.hasWindshield);
   bool hasWindshield;
 
   @override
